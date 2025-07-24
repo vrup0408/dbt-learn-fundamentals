@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: raw
+    schema: jaffle_shop
+    loaded_at_field: _etl_loaded_at
+    freshness: 
+      warn_after: {count: 2, period: day}
+      error_after: {count: 3, period: day}
+    tables:
+      - name: customers
+        freshness: null
+      - name: orders
