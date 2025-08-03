@@ -44,3 +44,9 @@ models:
       +materialized: table
     staging:
       +materialized: view
+  snowflake_spend:
+    +enabled: true
+    +schema: spend
+    xf:
+      snowflake_warehouse_metering_xf:
+        +enabled: false
